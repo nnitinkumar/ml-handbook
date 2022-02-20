@@ -2,3 +2,19 @@
 
 https://towardsdatascience.com/the-5-classification-evaluation-metrics-you-must-know-aa97784ff226
 
+Points to consider:
+1. What do we want to optimize for?
+2. Every business problem is different, and it should be optimized differently
+
+
+Different types of classification eval metrics and where to use them:
+
+1. Accuracy
+Definition: Accuracy is the proportion of true results among the total number of cases examined
+Formula: Accuracy = (TP+TN)/(TP+FP+TN+FN)
+Where to use: Well suited for binary and multiclass classification problems
+When to use: Accuracy is a valid choice of evaluation for classification problems which are well
+balanced and not skewed 
+
+
+2. 

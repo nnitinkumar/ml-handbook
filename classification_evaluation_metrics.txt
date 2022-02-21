@@ -11,10 +11,67 @@ Different types of classification eval metrics and where to use them:
 
 1. Accuracy
 Definition: Accuracy is the proportion of true results among the total number of cases examined
+
 Formula: Accuracy = (TP+TN)/(TP+FP+TN+FN)
+
 Where to use: Well suited for binary and multiclass classification problems
+
 When to use: Accuracy is a valid choice of evaluation for classification problems which are well
 balanced and not skewed 
 
 
-2. 
+2. Precision
+Definition: Tells what proportion of predicted positives  is truly positive
+
+Formula: Precision = TP/(TP+FP)
+
+When to use: When we want to very sure of our prediction
+
+Example: If we are building a system to predict if we should decrease 
+the credit limit on a particular account, we want to be very sure about
+out prediction or it may result in customer dissatisfaction.
+
+Caveats: Being very precise means our model will leave a lot of credit
+defaulters untouched and hence lose money
+
+
+3. Recall
+Definition: What proportion of actual positives is correctly classified?
+
+Formula: Recall = TP/TP+FN
+
+When to use: When we want to capture as many positives as possible
+
+Example: If we are building a system to predict if a person has cancer or not,
+we want to capture the disease even if we are not very sure
+
+Caveats: Recall is 1 if we predict 1 for all examples
+
+
+4. F1 Score
+Definition: To utilize the tradeoff of precision and recall
+F1 score is a number between 0 and 1 and is the harmonic mean of precision
+and recall
+
+Formula: F1 = 2*((precision*recall)/(precision+recall))
+
+When to use: When we want a model with both good precision and recall.
+F1 score maintains a balance between the precision and recall 
+for your classifier. If your precision is low, the F1 is low and if the recall is low
+again your F1 score is low.
+
+
+Example: If you are a police inspector and you want to catch criminals, you want to be sure
+that the person you catch is criminal (precision) and you also want to 
+capture as many criminals (recall) as possible. F1 score manages this tradeoff.
+
+
+Caveats: It gives equal weight to precision and recall. Use weighted F1 metric
+
+5. Log loss / Binary crossentropy
+
+
+
+
+
+

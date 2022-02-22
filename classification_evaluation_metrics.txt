@@ -70,6 +70,10 @@ Caveats: It gives equal weight to precision and recall. Use weighted F1 metric
 
 5. Log loss / Binary crossentropy
 
+When to use: when the output of a classifier is prediction probabilities
+Log loss takes into account the uncertainty of your prediction based on how much it varies
+from the actual label
+
 
 
 

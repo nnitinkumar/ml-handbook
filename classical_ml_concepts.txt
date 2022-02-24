@@ -1,4 +1,8 @@
---Made the repo private
+
+
+
+
+Q: Different types of classification eval metrics and where to use them:
 
 https://towardsdatascience.com/the-5-classification-evaluation-metrics-you-must-know-aa97784ff226
 
@@ -6,8 +10,6 @@ Points to consider:
 1. What do we want to optimize for?
 2. Every business problem is different, and it should be optimized differently
 
-
-Different types of classification eval metrics and where to use them:
 
 1. Accuracy
 Definition: Accuracy is the proportion of true results among the total number of cases examined
@@ -73,6 +75,26 @@ Caveats: It gives equal weight to precision and recall. Use weighted F1 metric
 When to use: when the output of a classifier is prediction probabilities
 Log loss takes into account the uncertainty of your prediction based on how much it varies
 from the actual label
+
+
+Q: What are loss functions in ML?
+SOURCE:
+https://towardsdatascience.com/common-loss-functions-in-machine-learning-46af0ffc4d23#:~:text=Machines%20learn%20by%20means%20of,up%20a%20very%20large%20number.
+
+1. Machines learns by loss functions.
+2. It's a method of evaluating how well specific algorithm models the given data.
+3. If predictions deviates too much from actual results, loss function give 
+huge numbers.
+4. Loss functions can be classified into two major categories
+-regression losses
+-classification loses
+5. Regression losses
+MSE (Mean squared error)
+MAE (Mean absolute error) /L1 loss
+Mean bias error
+6. Classification losses
+Hinge loss/ Multi class SVM loss
+Cross entropy loss/ Negative log likelihood
 
 
 

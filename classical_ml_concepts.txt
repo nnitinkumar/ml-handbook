@@ -97,6 +97,11 @@ Hinge loss/ Multi class SVM loss
 Cross entropy loss/ Negative log likelihood
 
 
+Q:
+
+
+
+
 
 
 

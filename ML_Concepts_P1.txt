@@ -2,7 +2,7 @@
 
 
 
-Q: Different types of classification eval metrics and where to use them:
+Q: Different types of classification eval metrics and where to use them::
 
 https://towardsdatascience.com/the-5-classification-evaluation-metrics-you-must-know-aa97784ff226
 

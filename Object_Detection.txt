@@ -1,0 +1,24 @@
+
+##Object detection##
+
+1. Creating machine learning models which are capable of identifying
+and localizing multiple objects in a single image remained a core challenge in computer vision
+
+2. Tensorflow's object detection API is an open source framework
+built on top of Tensorflow that makes it easy to construct, train
+and deploy obect detection models
+
+3. Object detection: 
+It is the process of finding real-world object
+instances like car, bike, TV, flowers, humans in still images or videos.
+It allows for the recognition, localization, and detection of multiple
+objects within an image. 
+It is used in application such as image retrieval,
+security, survelliance and advanced driver assistance systems.
+
+4. Different ways of doing object detection:
+* Feature based object detection
+* Viola jones object detection
+* SVM classification with HOG features
+* Deep learning object detection
+

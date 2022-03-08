@@ -21,4 +21,4 @@ security, survelliance and advanced driver assistance systems.
 * Viola jones object detection
 * SVM classification with HOG features
 * Deep learning object detection
-
+   

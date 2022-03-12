@@ -1,0 +1,31 @@
+Introduction:
+
+Decision trees are versatile machine learning algorithms that can perform both classification and regression tasks and even multioutput tasks.
+
+Decision trees are the fundamental components of Random forest
+
+Making predictions:
+
+What is gini impurity?
+
+The gini impurity measure is one of the methods used in decision tree algorithms to decide the optimal split from a root node and subsequent splits.
+
+Gini impurity tells us what is the probability of misclassifying an observation. Lower the gini the better the split so lower the likelihood of misclassification.
+
+Estimating Class Probabilities:
+
+A decision tree can be used to estimate the probability that an instance belongs to a particular class k.
+
+The CART Training Algorithm:
+
+Scikit-Learn uses the Classification and Regression Tree (CART) algorithm to train Decision Trees (also called “growing trees”).
+
+The algorithm works by first splitting the training set into two subsets using a single feature k and a threshold t. How does it choose k and t? It searches for the pair (k,t) that produces the purest subsets (weighted by their size).
+
+Once the CART algorithm has successfully split the training set in two, it splits the subsets using the same logic, then the sub subsets and so on, recursively. It stops recursing once it reaches the maximum depth (defined by the max_depth hyperparameter) or if it cannot find a split that will reduce impurity. 
+
+A few other hyperparameters control additional stopping conditions (min_samples_split, min_samples_leaf, min_weight_fraction_leaf, max_leaf_nodes)
+
+CART algorithm is a greedy algorithm, it greedily searches for an optimum split at the top level, then repeats the process at each subsequent level. It does not check whether or not the split will lead to the lowest possible impurity several levels down. A greedy algorithm often produces a solution that is reasonably good but not guaranteed to be optimal. 
+
+Unfortunately, finding the optimal tree is known to be an “NP-Complete” problem. It requires O(exp(m)) time, making the problem intractable even for small training sets. This is why we must settle for a “reasonably good” solution.

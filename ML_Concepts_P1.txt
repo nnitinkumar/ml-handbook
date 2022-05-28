@@ -97,7 +97,18 @@ Hinge loss/ Multi class SVM loss
 Cross entropy loss/ Negative log likelihood
 
 
-Q:
+Q:What is stemming?
+Data pre processing operation for Natural Language Processing
+
+Stemming is the process of removing a part of a word, or reducing
+a word to its stem or root.
+This might not necessarily mean we're reducing a word to its
+dictionary root. There are a few algorithms to decide how to chop a 
+word off. 
+
+Eg. We have a set of words - send, sent, sending
+After stemming we will have 'send'
+
 
 
 

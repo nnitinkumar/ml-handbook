@@ -1,0 +1,112 @@
+# Feature Engineering
+
+Feature engineering is something that is done in the best possible manner only when you have some knowledge about the domain of the problem and depends a lot on the data in concern.
+
+Feature engineering is not just about creating new features from data but also includes different types of normalization and transformations.
+
+For feature engineering about categorical features, refer the previous chapter.
+
+Convert categorical variables to:
+
+Counts
+
+Target
+
+Encoding
+
+Embeddings
+
+1. Date and time data
+
+We can create 
+
+Year
+
+Week of year
+
+Month
+
+Day of week
+
+Weekend
+
+Hour
+
+Date time features are critical when you are dealing with time series data, for example, predicting sales of a store but would like to use a model like xgboost on aggregated features. (NOT VERY CLEAR)
+
+Suppose we have data frame like:
+date - 2016-09-01
+
+customer_id - 1123
+
+cat1 - 2
+
+cat2 - 2
+
+cat3 - 0
+
+num1 - -0.43
+
+From date column, we can extract features like the year, month, quarter, etc.. Then we have a customer_id column which has multiple entries, so a customer is seen many times. And each date and customer id has three categorical and one numerical feature attached to it. So we can create a bunch of features:
+
+- What’s the month a customer is most active in
+- What is the count of cat1, cat2, cat3 for a customer
+- What is the count of cat1, cat2, cat3 for a customer for a given week of the year
+- What is the mean of num1 for a given customer
+
+etc
+
+ 
+
+1. List of values when dealing with time series data
+
+Features which are not individual values but a list of values. For example, transactions by a customer in a given period of time. 
+
+With numerical features, when you are grouping on a categorical column, you will get features like a list of values which are time distributed. You can create features such as:
+
+mean, max, min, unique, skew, kurtosis, kstat, percentile, quantile, peak to peak etc
+
+To convert Time series data (list of values) to features you can use 
+
+tsfresh library.
+
+A simple way to generate many features is just to create a bunch of polynomial features. For example, a second degree polynomial feature from two features ‘a’ and ‘b’ would include ‘a’, ‘b’, ‘ab’, ‘a square’, ‘b square’.
+
+If you create third degree polynomial features, you will end up with nine features in total. 
+
+1. To convert number to categories - Binning
+
+When you bin, you can use both the bin and the original feature. Binning also enables you to treat numerical features as categorized.
+
+1. Numerical features into log transformation
+
+When a feature has very high variance, compared to other features, we would want to reduce the variance of this column, and that can be done by taking a log transformation.
+
+Eg. apply log(1+x)
+
+Sometimes instead of log you can take exponential.
+
+Most of the time, these kinds of numerical features are created based on intuition. There is no formula. If you are working in an industry, you will create your industry specific features.
+
+Missing values:
+
+Handling missing values is also considered feature engineering. 
+
+For categorical features, if you ever encounter missing values in categorical features, treat is as a new category. 
+
+For  numerical features:
+Choose a value that does not appear in the specific feature and fill using that. Not a very effective method. 
+
+Fill with mean.
+
+Fill with median.
+
+Fill with the most common values.
+
+Use K nearest neighbors method.
+
+Train a regression model that tries to predict missing values in a column based on other columns. Start with one column that has a missing value and treat this column as the target column for regression model without the missing values. Using all the other columns, train a model on samples for which there is no missing value in the concerned column and then try to predict target (the same column) for the samples that were removed earlier. 
+
+Imputing values for tree based models is unnecessary as they can handle it themselves. 
+
+There are few features like items per store. These cannot be generalized and come purely from domain, data and business knowledge. Look at the data and see what fits and create features accordingly. Scale or normalize your features if you are using linear models like logistic regression or a model like SVM. Tree based models will always work fine without any normalization of features.

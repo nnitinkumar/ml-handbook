@@ -1,0 +1,63 @@
+# Feature Selection
+
+Having too many features pose a problem of curse of dimensionality.
+
+Simplest form of selecting features - remove features with very low variance
+
+As they act as constant.
+
+Variance also depends on scaling of the data.
+
+Sci kit learn has implementation of Variance Threshold that does this.
+
+We can also remove features which have high correlation. Use Pearson correlation.
+
+Univariate ways of feature selection:
+
+Univariate means scoring of each feature against a given target.
+
+Mutual information, ANOVA F test, Chi sq test are examples.
+
+There are 2 ways of using these in scikit learn”
+Select K best: it keeps the top k scoring features
+
+Select Percentile : it keeps the top features which are in a %age specified
+
+Use Chi sq only for data non negative in nature.
+
+Univariate feature selection may not perform well always.
+
+Most of the time, people prefer doing feature selection using a machine learning model.
+
+Greedy feature selection:
+
+Choose a model
+
+Select a loss/scoring function
+
+Iterate each feature and add it to the list of good features if it improves loss/score 
+
+This will fit a given model each time it evaluates a feature. Computational cost is high. If not done properly then over fitting can happen.
+
+Recursive feature elimination (RFE):
+Start with all features and keep removing one feature in every iteration that provides the least value to a given model.
+
+To identify which feature offers the least value - use models like linear support vector machine or logistic regression, get a coefficient for each feature which decides the importance of the features.
+
+In case of tree based models, we get feature importance in place of coefficients. Eliminate till you reach a number of features you want to keep.
+
+You can also fit the model to the data and select features from the model by the feature coefficients or the importance of features. If you use coefficients is above the threshold, you can keep the feature else eliminate it.
+
+You can choose features from one model and use another model to train. 
+
+Eg. you can use Logistic regression to select the features and then use Random forest to train the model on chosen features. Scikit learn offers SelectFromModel class that helps you choose features directly from a given model. You can also specify the threshold for coefficients or feature importance if you want and the maximum number of features you want to select.
+
+Feature selection using models that have L1 lasso penalization
+
+When we have L1 penalization for regularization, most coefficients will be 0 or close to 0
+
+And we select features with non zero coefficients.
+
+You can do it by just replacing random forest in the snippet which supports L1 penalty e.g. lasso regression.
+
+Select features on training data and validate the model on validation data for proper selection of features without overfitting the model.
